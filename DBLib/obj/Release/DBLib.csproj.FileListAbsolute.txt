@@ -1,0 +1,11 @@
+C:\Users\Administrator\source\repos\UBack\DBLib\bin\Release\DBLib.dll
+C:\Users\Administrator\source\repos\UBack\DBLib\bin\Release\DBLib.pdb
+C:\Users\Administrator\source\repos\UBack\DBLib\bin\Release\Model.dll
+C:\Users\Administrator\source\repos\UBack\DBLib\bin\Release\MySql.Data.dll
+C:\Users\Administrator\source\repos\UBack\DBLib\bin\Release\MySql.Data.Entity.EF6.dll
+C:\Users\Administrator\source\repos\UBack\DBLib\bin\Release\Model.pdb
+C:\Users\Administrator\source\repos\UBack\DBLib\obj\Release\DBLib.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\UBack\DBLib\obj\Release\DBLib.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\UBack\DBLib\obj\Release\DBLib.csproj.CopyComplete
+C:\Users\Administrator\source\repos\UBack\DBLib\obj\Release\DBLib.dll
+C:\Users\Administrator\source\repos\UBack\DBLib\obj\Release\DBLib.pdb

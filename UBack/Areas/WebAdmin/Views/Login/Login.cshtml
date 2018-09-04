@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "登录页";
+    Layout = "~/Areas/WebAdmin/Views/Shared/_LayoutBlank.cshtml";
+}
+
+<div class="login-main">
+    @*<header class="layui-elip">后台登录</header>*@
+    <form class="layui-form">
+        <div class="layui-input-inline">
+            <input type="text" name="account" required lay-verify="required" placeholder="邮箱/手机/用户名" class="layui-input" />
+        </div>
+        <div class="layui-input-inline">
+            <input type="password" name="pwd" required lay-verify="required" placeholder="密码" class="layui-input" />
+        </div>
+        <div class="layui-input-inline login-btn">
+
+            <button lay-submit lay-filter="loginform" class="layui-btn">登录</button>
+        </div>
+        @*<hr />
+            <div class="layui-input-inline">
+                <button type="button" class="layui-btn layui-btn-primary">QQ登录</button>
+            </div>
+            <div class="layui-input-inline">
+                <button type="button" class="layui-btn layui-btn-normal">微信登录</button>
+            </div>*@
+        @*<a href="javascript:;" class="fr">忘记密码？</a>*@
+    </form>
+</div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/static/js/jquery.cookie.js"></script>
+<script src="~/Scripts/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['form'], function () {
+
+        // 操作对象
+        var form = layui.form;
+
+        form.on('submit(loginform)', function (data) {
+            var formdata = data.field;
+            $.get("../Login/userlogin", formdata, function (ret) {
+                if (ret.flag) {
+                    layer.msg("登录成功!");
+                    setTimeout(function () {
+                        //保存用户信息到cookie
+                        $.cookie('userinfo', JSON.stringify(ret.data[0]));
+                        window.location.href = "/WebAdmin/Home/Index";
+                    }, 2000);
+                }
+                else {
+                    layer.msg(ret.msg);
+                }
+            }, "json");
+            return false;
+        });
+    });
+</script>

@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "text": "系统设置",
+      "icon": "&#xe620;",
+      "subset": [
+        {
+          "id": 33,
+          "text": "角色管理",
+          "icon": "&#xe621;",
+          "href": "/WebAdmin/Role/Index"
+        }
+      ]
+    },
+    {
+      "text": "数据字典",
+      "icon": "&#xe628;",
+      "href": "",
+      "subset": [
+        {
+          "id": 44,
+          "text": "模块管理",
+          "icon": "&#xe621;",
+          "href": "/WebAdmin/Module/Index"
+        },
+        {
+          "id": 55,
+          "text": "按钮设置",
+          "icon": "&#xe621;",
+          "href": "/WebAdmin/Menu/Index"
+        },
+        {
+          "id": 22,
+          "text": "用户管理",
+          "icon": "&#xe621;",
+          "href": "/WebAdmin/User/Index"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\uback发布</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/20180801124934.nb3">
+      <publishTime>08/01/2018 12:49:35</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/Account/Login.cshtml">
+      <publishTime>06/22/2018 17:02:00</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/Account/Register.cshtml">
+      <publishTime>06/22/2018 14:42:47</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/Home/Index.cshtml">
+      <publishTime>07/03/2018 15:16:13</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/Home/Welcome.cshtml">
+      <publishTime>06/29/2018 15:10:20</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/Module/Index.cshtml">
+      <publishTime>07/09/2018 18:27:37</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/Role/Index.cshtml">
+      <publishTime>07/31/2018 15:39:21</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/Shared/_Layout.cshtml">
+      <publishTime>07/03/2018 16:02:13</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/Shared/_LayoutBlank.cshtml">
+      <publishTime>07/02/2018 11:25:30</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/User/Index.cshtml">
+      <publishTime>08/01/2018 13:02:03</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/web.config">
+      <publishTime>06/22/2018 14:36:10</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/_ViewStart.cshtml">
+      <publishTime>06/22/2018 14:38:42</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>06/22/2018 14:28:45</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>06/22/2018 14:28:45</publishTime>
+    </File>
+    <File Include="bin/CommonTools.dll">
+      <publishTime>08/01/2018 14:14:07</publishTime>
+    </File>
+    <File Include="bin/CommonTools.pdb">
+      <publishTime>08/01/2018 14:14:07</publishTime>
+    </File>
+    <File Include="bin/DBLib.dll">
+      <publishTime>08/01/2018 14:14:07</publishTime>
+    </File>
+    <File Include="bin/DBLib.pdb">
+      <publishTime>08/01/2018 14:14:07</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>06/22/2018 14:28:49</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>06/22/2018 14:28:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>06/22/2018 14:28:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>06/22/2018 14:28:51</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>06/22/2018 14:28:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>06/22/2018 14:28:51</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>06/22/2018 14:28:51</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>06/22/2018 14:28:51</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>06/22/2018 14:28:51</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>06/22/2018 14:28:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>06/22/2018 14:28:44</publishTime>
+    </File>
+    <File Include="bin/Model.dll">
+      <publishTime>08/01/2018 14:14:06</publishTime>
+    </File>
+    <File Include="bin/Model.pdb">
+      <publishTime>08/01/2018 14:14:06</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>06/22/2018 17:54:15</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.EF6.dll">
+      <publishTime>06/22/2018 17:54:15</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/22/2018 14:28:47</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>06/22/2018 14:28:51</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>06/22/2018 14:28:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>06/22/2018 14:28:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>06/22/2018 14:28:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>06/22/2018 14:28:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>06/22/2018 14:28:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>06/22/2018 14:28:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>06/22/2018 14:28:43</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>06/22/2018 14:28:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>06/22/2018 14:28:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>06/22/2018 14:28:44</publishTime>
+    </File>
+    <File Include="bin/UBack.dll">
+      <publishTime>08/01/2018 14:16:55</publishTime>
+    </File>
+    <File Include="bin/UBack.pdb">
+      <publishTime>08/01/2018 14:16:55</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>06/22/2018 14:28:45</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/EntityFramework.resources.dll">
+      <publishTime>06/22/2018 14:28:52</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/EntityFramework.SqlServer.resources.dll">
+      <publishTime>06/22/2018 14:28:52</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.AspNet.Identity.Core.resources.dll">
+      <publishTime>06/22/2018 14:28:52</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.AspNet.Identity.EntityFramework.resources.dll">
+      <publishTime>06/22/2018 14:28:52</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.AspNet.Identity.Owin.resources.dll">
+      <publishTime>06/22/2018 14:28:53</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Owin.Host.SystemWeb.resources.dll">
+      <publishTime>06/22/2018 14:28:53</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Owin.resources.dll">
+      <publishTime>06/22/2018 14:28:53</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Owin.Security.MicrosoftAccount.resources.dll">
+      <publishTime>06/22/2018 14:28:54</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Owin.Security.resources.dll">
+      <publishTime>06/22/2018 14:28:53</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
+      <publishTime>06/22/2018 14:28:48</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>06/22/2018 14:28:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.resources.dll">
+      <publishTime>06/22/2018 14:28:48</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.WebHost.resources.dll">
+      <publishTime>06/22/2018 14:28:48</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>06/22/2018 14:28:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Optimization.resources.dll">
+      <publishTime>06/22/2018 14:28:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>06/22/2018 14:28:45</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>06/22/2018 14:28:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>06/22/2018 14:28:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>06/22/2018 14:28:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>06/22/2018 14:28:42</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>06/22/2018 14:28:42</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>06/22/2018 14:28:40</publishTime>
+    </File>
+    <File Include="DLL/MySql.Data.dll">
+      <publishTime>06/22/2018 17:54:15</publishTime>
+    </File>
+    <File Include="DLL/MySql.Data.Entity.EF6.dll">
+      <publishTime>06/22/2018 17:54:15</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>06/22/2018 14:28:40</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>06/22/2018 14:28:42</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>06/22/2018 14:28:42</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>06/22/2018 14:28:42</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>06/22/2018 14:28:42</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>06/22/2018 14:28:40</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>06/22/2018 14:28:54</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>06/22/2018 14:28:42</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>06/22/2018 14:28:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>06/22/2018 14:28:43</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>06/22/2018 14:28:43</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>06/22/2018 14:28:43</publishTime>
+    </File>
+    <File Include="Scripts/layui/css/layui.css">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/css/layui.mobile.css">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/css/modules/code.css">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/css/modules/laydate/default/laydate.css">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/css/modules/layer/default/icon-ext.png">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/css/modules/layer/default/icon.png">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/css/modules/layer/default/layer.css">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/css/modules/layer/default/loading-0.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/css/modules/layer/default/loading-1.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/css/modules/layer/default/loading-2.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/font/iconfont.eot">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/font/iconfont.svg">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/font/iconfont.ttf">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/font/iconfont.woff">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/0.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/1.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/10.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/11.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/12.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/13.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/14.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/15.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/16.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/17.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/18.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/19.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/2.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/20.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/21.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/22.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/23.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/24.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/25.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/26.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/27.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/28.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/29.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/3.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/30.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/31.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/32.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/33.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/34.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/35.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/36.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/37.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/38.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/39.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/4.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/40.gif">
+      <publishTime>07/03/2018 14:30:53</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/41.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/42.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/43.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/44.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/45.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/46.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/47.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/48.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/49.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/5.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/50.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/51.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/52.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/53.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/54.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/55.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/56.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/57.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/58.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/59.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/6.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/60.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/61.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/62.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/63.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/64.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/65.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/66.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/67.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/68.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/69.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/7.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/70.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/71.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/8.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/images/face/9.gif">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/carousel.js">
+      <publishTime>07/04/2018 19:01:47</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/code.js">
+      <publishTime>07/04/2018 19:01:34</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/element.js">
+      <publishTime>07/04/2018 19:01:25</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/flow.js">
+      <publishTime>07/04/2018 19:01:13</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/form.js">
+      <publishTime>07/04/2018 19:00:56</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/jquery.js">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/laydate.js">
+      <publishTime>07/04/2018 19:00:35</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/layedit.js">
+      <publishTime>07/04/2018 19:00:25</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/layer.js">
+      <publishTime>07/04/2018 19:00:09</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/laypage.js">
+      <publishTime>07/04/2018 18:59:59</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/laytpl.js">
+      <publishTime>07/04/2018 18:59:46</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/mobile.js">
+      <publishTime>07/04/2018 18:59:27</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/rate.js">
+      <publishTime>07/04/2018 18:59:14</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/table.js">
+      <publishTime>07/04/2018 17:20:11</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/tree.js">
+      <publishTime>07/04/2018 18:54:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/upload.js">
+      <publishTime>07/04/2018 18:58:47</publishTime>
+    </File>
+    <File Include="Scripts/layui/lay/modules/util.js">
+      <publishTime>07/04/2018 18:59:00</publishTime>
+    </File>
+    <File Include="Scripts/layui/layui.all.js">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Scripts/layui/layui.js">
+      <publishTime>07/04/2018 19:02:32</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>06/22/2018 14:28:44</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>06/22/2018 14:28:45</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>06/22/2018 14:28:45</publishTime>
+    </File>
+    <File Include="Scripts/static/css/style.css">
+      <publishTime>06/22/2018 15:19:39</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/404.html">
+      <publishTime>06/22/2018 16:25:44</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/add-edit.html">
+      <publishTime>06/22/2018 16:22:19</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/auxiliar.html">
+      <publishTime>06/22/2018 16:26:54</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/btn.html">
+      <publishTime>06/22/2018 16:26:58</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/children.html">
+      <publishTime>07/03/2018 16:00:11</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/data-table.html">
+      <publishTime>06/22/2018 16:25:15</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/folding-panel.html">
+      <publishTime>06/22/2018 16:18:39</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/form.html">
+      <publishTime>06/22/2018 16:18:00</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/login.html">
+      <publishTime>06/22/2018 16:19:44</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/login2.html">
+      <publishTime>06/22/2018 16:20:29</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/map.html">
+      <publishTime>06/22/2018 16:21:37</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/register.html">
+      <publishTime>06/22/2018 16:20:57</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/tab-card.html">
+      <publishTime>06/22/2018 16:49:49</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/table.html">
+      <publishTime>06/22/2018 16:24:07</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/tips.html">
+      <publishTime>06/22/2018 16:23:51</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/tree-table.html">
+      <publishTime>06/22/2018 16:25:25</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/welcome.html">
+      <publishTime>06/22/2018 16:54:22</publishTime>
+    </File>
+    <File Include="Scripts/static/demo/_blank.html">
+      <publishTime>06/22/2018 15:49:02</publishTime>
+    </File>
+    <File Include="Scripts/static/image/bg.png">
+      <publishTime>06/22/2018 15:19:39</publishTime>
+    </File>
+    <File Include="Scripts/static/image/code.png">
+      <publishTime>06/22/2018 15:19:39</publishTime>
+    </File>
+    <File Include="Scripts/static/image/v.png">
+      <publishTime>06/22/2018 15:19:39</publishTime>
+    </File>
+    <File Include="Scripts/static/image/wx.png">
+      <publishTime>06/22/2018 15:19:39</publishTime>
+    </File>
+    <File Include="Scripts/static/image/zfb.png">
+      <publishTime>06/22/2018 15:19:39</publishTime>
+    </File>
+    <File Include="Scripts/static/js/echarts/echarts.min.js">
+      <publishTime>06/22/2018 15:33:44</publishTime>
+    </File>
+    <File Include="Scripts/static/js/index.js">
+      <publishTime>06/22/2018 15:51:13</publishTime>
+    </File>
+    <File Include="Scripts/static/js/vip_comm.js">
+      <publishTime>07/04/2018 16:34:29</publishTime>
+    </File>
+    <File Include="Scripts/static/js/vip_nav.js">
+      <publishTime>07/03/2018 15:59:29</publishTime>
+    </File>
+    <File Include="Scripts/static/js/vip_tab.js">
+      <publishTime>06/22/2018 15:19:39</publishTime>
+    </File>
+    <File Include="Scripts/static/js/vip_table.js">
+      <publishTime>06/22/2018 15:19:39</publishTime>
+    </File>
+    <File Include="Scripts/static/json/data_table.json">
+      <publishTime>06/22/2018 16:14:33</publishTime>
+    </File>
+    <File Include="Scripts/static/json/nav_main.json">
+      <publishTime>06/22/2018 16:32:05</publishTime>
+    </File>
+    <File Include="Scripts/static/json/nav_main2.json">
+      <publishTime>07/03/2018 15:56:58</publishTime>
+    </File>
+    <File Include="Scripts/static/json/nav_top_left.json">
+      <publishTime>06/22/2018 16:13:41</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>07/03/2018 14:30:54</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/01/2018 14:14:08</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,407 @@
+﻿@using System.Data;
+@using System.Collections.Generic;
+
+@{
+    ViewBag.Title = "用户管理";
+    Layout = "~/Areas/WebAdmin/Views/Shared/_LayoutBlank.cshtml";
+}
+
+<!-- 工具集 -->
+<div class="my-btn-box">
+    <div class="layui-btn-group fl">
+        <button class="layui-btn layui-btn-normal toolbox" id="add">
+            <i class="layui-icon">&#xe654;</i>新增用户
+        </button>
+        <button class="layui-btn layui-btn-danger toolbox" id="del_all">
+            <i class="layui-icon">&#xe640;</i>批量删除
+        </button>
+    </div>
+    <div class="fr">
+        <span class="layui-form-label">搜索条件：</span>
+        <div class="layui-input-inline">
+            <input type="text" id="searchval" placeholder="请输入姓名查找" class="layui-input">
+        </div>
+        <button class="layui-btn toolbox" id="search">
+            <i class="layui-icon">&#xe615;</i>查询
+        </button>
+    </div>
+</div>
+
+<!-- 表格 -->
+<div id="dataTable" lay-filter="dataTable"></div>
+
+<!--弹层区域-->
+<form class="layui-form" style="display:none; margin:10px 10px 0 -30px;" id="mainForm">
+    <input type="hidden" name="id" />
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="username" lay-verify="required" class="layui-input" />
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">单位</label>
+            <div class="layui-input-inline">
+                <select id="unitid" name="unitid" lay-filter="unit" lay-verify="required">
+                    @foreach (DataRow item in Model["units"].Rows)
+                    {
+                        <option value="@item["id"]">@item["unitname"]</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">部门</label>
+            <div class="layui-input-inline">
+                <select id="depid" name="depid" lay-verify="required"></select>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">登录码</label>
+            <div class="layui-input-inline">
+                <input type="text" name="logincode" lay-verify="required" class="layui-input" />
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">邮箱</label>
+            <div class="layui-input-inline">
+                <input type="text" name="email" lay-verify="email" class="layui-input" />
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">手机</label>
+            <div class="layui-input-inline">
+                <input type="text" name="phone" lay-verify="phone" class="layui-input" />
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">所属角色</label>
+            @foreach (DataRow item in Model["roles"].Rows)
+            {
+                <input type="checkbox" name="roleid" value="@item["id"]" title="@item["rolename"]" lay-skin="primary" />
+            }
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-inline">
+                <input type="radio" name="status" value="1" title="启用" checked>
+                <input type="radio" name="status" value="0" title="禁用">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">个人介绍</label>
+        <div class="layui-input-block">
+            <textarea name="remark" style="width:97%;resize:none" placeholder="请输入个人介绍" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" id="save" lay-submit lay-filter="userform">保存</button>
+            <button id="cancle" class=" layui-btn layui-btn-primary">取消</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/html" id="statusTpl">
+    {{#  if(d.status == 1){ }}
+    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁用" disabled checked />
+    {{#  } else { }}
+    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁用" disabled />
+    {{#  } }}
+
+</script>
+
+<!-- 表格操作按钮集 -->
+<script type="text/html" id="barOption">
+    <a class="layui-btn layui-btn-sm" lay-event="view">查看</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del">删除</a>
+</script>
+
+<script src="~/Scripts/layui/layui.js"></script>
+<script src="~/Scripts/static/js/index.js"></script>
+
+<script type="text/javascript">
+    // layui方法
+    layui.use(['table', 'form', 'layer', 'enhanceform'], function () {
+        // 操作对象
+        var form = layui.form, table = layui.table, layer = layui.layer, $ = layui.jquery, enhanceForm = layui.enhanceform;
+        var index = 0;
+        var enhance = new enhanceForm({
+            elem: '#mainForm' //表单选择器
+        });
+
+        $(function () {
+            var unitid = $("#unitid").val();
+            initDep(unitid);
+        })
+
+        // 表格渲染
+        table.render({
+            elem: '#dataTable',
+            id: 'dataCheck',
+            where: { val: $("#searchval").val() },
+            height: 450,
+            even: true,
+            url: '/api/user/getlist',
+            limits: [10, 15, 20],
+            limit: 10,
+            page: true,
+            loading: true,
+            cols: [[
+                { type: 'checkbox', checkbox: true, fixed: true, float: 'left' },
+                { type: 'numbers', title: '序号' },
+                { field: 'username', title: '用户名' },
+                { field: 'logincode', title: '登录码' },
+                { field: 'email', title: '邮箱' },
+                { field: 'phone', title: '联系方式' },
+                { field: 'unitname', title: '单位' },
+                { field: 'depname', title: '部门' },
+                { field: 'status', title: '状态', templet: '#statusTpl' },
+                { fixed: 'right', title: '操作', width: '18%', align: 'center', toolbar: '#barOption' }
+            ]]
+        });
+
+        table.on('tool(dataTable)', function (obj) {
+            var type = obj.event;
+            active[type] ? active[type].call(this, obj) : '';
+        });
+
+        form.on('select(unit)', function (data) {
+            initDep(data.value);
+        });
+
+        form.on('submit(userform)', function (data) {
+            var formdata = data.field;
+            var roles = getcheckroles();
+            formdata.roleid = roles;
+            $.post("/api/user/addOrupdate", formdata, function (ret) {
+                if (ret.flag) {
+                    layer.msg("保存成功!");
+                    setTimeout(function () {
+                        layer.close(index);
+                        $(".layui-laypage-btn").click();
+                    }, 2000)
+                }
+                else {
+                    layer.msg(ret.msg);
+                }
+            }, "json");
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+
+        //按钮自定义事件
+        $(".toolbox").on("click", function () {
+            var type = $(this).attr("id");
+            if (type)
+                active[type] ? active[type].call(this) : '';
+        });
+
+        //取消按钮
+        $("#cancle").click(function () {
+            layer.close(index);
+            return false;
+        })
+
+        //部门数据加载
+        function initDep(unitid) {
+            $("#depid").html("");
+            $.ajax({
+                url: "/api/setting/getdeps",
+                type: "get",
+                dataType: "json",
+                data: { unitid: unitid },
+                async: false,
+                success: function (ret) {
+                    if (ret.flag) {
+                        for (var i = 0; i < ret.data.length; i++) {
+                            $("#depid").append("<option value='" + ret.data[i].id + "'>" + ret.data[i].depname + "</option>");
+                            form.render();
+                        }
+                    }
+                    else {
+                        layer.msg(ret.msg);
+                    }
+                }
+            });
+        }
+
+        //获取选中角色
+        function getcheckroles() {
+            var roles = "";
+            var checkdata = $.find('input[type="checkbox"][name="roleid"]');
+            for (var i = 0; i < checkdata.length; i++) {
+                if (checkdata[i].checked) {
+                    roles += checkdata[i].value + ",";
+                }
+            }
+            if (roles != "")
+                roles = roles.substr(0, roles.length - 1);
+
+            return roles;
+        }
+
+        var active = {
+            //搜索
+            search: function () {
+                var searchval = $('#searchval').val();
+
+                //执行重载
+                table.reload('dataCheck', {
+                    page: {
+                        curr: 1
+                    }
+                    , where: {
+                        val: searchval
+                    }
+                });
+            },
+            //新增
+            add: function () {
+                $("#save").removeClass("layui-btn-disabled");
+                $("#mainForm").show();
+                $("input[type='hidden']").val("");
+                index = layer.open({
+                    type: 1,
+                    maxmin: false,
+                    title: "新增用户",
+                    area: ['950px', '480px'],
+                    shadeClose: true,
+                    content: $('#mainForm'),
+                    end: function () {
+                        $("#mainForm").hide();
+                        $('form')[0].reset();
+                    }
+                });
+            },
+            //多选删除
+            del_all: function () {
+                var checkStatus = table.checkStatus('dataCheck'), data = checkStatus.data;
+                var ids = "";
+                if (data.length <= 0) {
+                    layer.msg("请选择数据进行删除!");
+                    return;
+                }
+                else {
+                    for (var i = 0; i < data.length; i++) {
+                        ids += data[i].id + ",";
+                    }
+                    if (ids == "")
+                        return;
+
+                    layer.confirm('确定删除所选数据吗？', {
+                        btn: ['确定', '取消']
+                    }, function () {
+                        //获取选中的ID传到后台进行删除
+                        ids = ids.substr(0, ids.length - 1);
+                        $.post("/api/user/del", { ids: ids }, function (ret) {
+                            if (ret.flag) {
+                                setTimeout(function () {
+                                    $(".layui-laypage-btn").click();
+                                }, 2000)
+                                layer.msg("删除成功!");
+                            }
+                            else {
+                                layer.msg(ret.msg);
+                            }
+                        }, "json");
+                    });
+                }
+            },
+            //查看
+            view: function (obj) {
+                var data = obj.data;
+                $("#save").addClass("layui-btn-disabled").attr("disabled","disabled");
+                $.getJSON("/api/user/getByID", { id: data.id }, function (d) {
+                    if (d) {
+                        //自动填充值
+                        enhance.filling(d.data);
+                        enhance.setSelectVal("unitid", d.data.unitid, true);
+                        enhance.setSelectVal("depid", d.data.depid, false);
+                        //设置禁用属性
+                        enhance.setDisabled(["text", "radio", "select", "checkbox", "textarea"]);
+                        $("#mainForm").show();
+                        index = layer.open({
+                            type: 1,
+                            maxmin: false,
+                            title: "查看",
+                            area: ['950px', '480px'],
+                            shadeClose: true,
+                            content: $('#mainForm'),
+                            end: function () {
+                                $("#mainForm").hide();
+                                $('form')[0].reset();
+                                //取消禁用属性
+                                enhance.setEnabled(["text", "radio", "select", "checkbox", "textarea"]);
+                                $("input[type='hidden']").val("");
+                            }
+                        });
+                    }
+                })
+            },
+            //编辑
+            edit: function (obj) {
+                var data = obj.data;
+                $("#save").removeClass("layui-btn-disabled").removeAttr("disabled");
+                $("input[type='hidden']").val(data.id);
+                $.getJSON("/api/user/getByID", { id: data.id }, function (d) {
+                    if (d) {
+                        //自动填充值
+                        enhance.filling(d.data);
+                        enhance.setSelectVal("unitid", d.data.unitid, true);
+                        enhance.setSelectVal("depid", d.data.depid, false);
+                        $("#mainForm").show();
+                        index = layer.open({
+                            type: 1,
+                            maxmin: false,
+                            title: "编辑用户",
+                            area: ['950px', '480px'],
+                            shadeClose: true,
+                            content: $('#mainForm'),
+                            end: function () {
+                                $("#mainForm").hide();
+                                $('form')[0].reset();
+                                $("input[type='hidden']").val("");
+                            }
+                        });
+                    }
+                })
+            },
+            //删除
+            del: function (obj) {
+                var data = obj.data;
+                var ids = "";
+                if (data) {
+                    ids = data.id;
+                }
+                //获取选中的ID传到后台进行删除
+                if (ids == "")
+                    return;
+
+                layer.confirm('确定删除该条数据吗？', {
+                    btn: ['确定', '取消']
+                }, function () {
+                    $.post("/api/user/del", { ids: ids }, function (ret) {
+                        if (ret.flag) {
+                            setTimeout(function () {
+                                $(".layui-laypage-btn").click();
+                            }, 2000)
+                            layer.msg("删除成功!");
+                        }
+                        else {
+                            layer.msg(ret.msg);
+                        }
+                    }, "json");
+                });
+            }
+        };
+    });
+</script>

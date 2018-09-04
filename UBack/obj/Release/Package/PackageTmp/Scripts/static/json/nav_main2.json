@@ -1,0 +1,97 @@
+{
+	"data": [
+		{
+			"text": "系统设置",
+			"icon": "&#xe620;",
+			"subset": [
+				{
+					"id": 11,
+					"text": "欢迎页2",
+					"icon": "&#xe621;",
+					"href": "/WebAdmin/Home/Welcome"
+				},
+				{
+					"id": 22,
+					"text": "用户管理",
+					"icon": "&#xe621;",
+					"href": "/WebAdmin/User/Index"
+				},
+				{
+					"id": 33,
+					"text": "角色管理",
+					"icon": "&#xe621;",
+					"href": "/WebAdmin/Role/Index"
+				},
+				{
+					"id": 44,
+					"text": "系统权限",
+					"icon": "&#xe621;",
+					"href": "/WebAdmin/SysModule/Index"
+				},
+				{
+					"id": 55,
+					"text": "选项卡",
+					"icon": "&#xe621;",
+					"href": "../../Scripts/static/demo/tab-card.html"
+				}
+			]
+		},
+		{
+			"text": "扩展",
+			"icon": "&#xe628;",
+			"href": "",
+			"subset": [
+				{
+					"text": "登录页",
+					"icon": "&#xe621;",
+					"href": "../../Scripts/static/demo/login.html"
+				},
+				{
+					"text": "登录页2",
+					"icon": "&#xe621;",
+					"href": "../../Scripts/static/demo/login2.html"
+				},
+				{
+					"text": "注册页",
+					"icon": "&#xe621;",
+					"href": "../../Scripts/static/demo/register.html"
+				},
+				{
+					"text": "图表",
+					"icon": "&#xe621;",
+					"href": "../../Scripts/static/demo/map.html"
+				},
+				{
+					"text": "添加-修改",
+					"icon": "&#xe621;",
+					"href": "../../Scripts/static/demo/add-edit.html"
+				},
+				{
+					"text": "data-table 表格",
+					"icon": "&#xe621;",
+					"href": "../../Scripts/static/demo/data-table.html"
+				},
+				{
+					"text": "tree-table 树表格",
+					"icon": "&#xe621;",
+					"href": "../../Scripts/static/demo/tree-table.html"
+				},
+				{
+					"text": "404页",
+					"icon": "&#xe621;",
+					"href": "../../Scripts/static/demo/404.html"
+				},
+				{
+					"text": "提示页",
+					"icon": "&#xe621;",
+					"href": "../../Scripts/static/demo/tips.html"
+				}
+			]
+		},
+		{
+			"text": "子窗口操作",
+			"icon": "&#xe638;",
+			"href": "../../Scripts/static/demo/children.html"
+		}
+	]
+}

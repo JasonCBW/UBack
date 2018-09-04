@@ -1,0 +1,14 @@
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Release\CommonTools.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Release\CommonTools.pdb
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Release\DBLib.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Release\Model.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Release\MySql.Data.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Release\DBLib.pdb
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Release\Model.pdb
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Release\Newtonsoft.Json.xml
+C:\Users\Administrator\source\repos\UBack\CommonTools\obj\Release\CommonTools.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\UBack\CommonTools\obj\Release\CommonTools.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\UBack\CommonTools\obj\Release\CommonTools.csproj.CopyComplete
+C:\Users\Administrator\source\repos\UBack\CommonTools\obj\Release\CommonTools.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\obj\Release\CommonTools.pdb

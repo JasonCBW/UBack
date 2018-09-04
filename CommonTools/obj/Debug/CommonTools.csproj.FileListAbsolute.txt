@@ -1,0 +1,25 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\bin\Debug\CommonTools.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\bin\Debug\CommonTools.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\obj\Debug\CommonTools.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\obj\Debug\CommonTools.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\obj\Debug\CommonTools.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\bin\Debug\DBLib.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\bin\Debug\Model.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\bin\Debug\DBLib.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\UBack\CommonTools\bin\Debug\Model.pdb
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Debug\CommonTools.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Debug\CommonTools.pdb
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Debug\DBLib.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Debug\Model.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Debug\MySql.Data.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Debug\DBLib.pdb
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Debug\Model.pdb
+C:\Users\Administrator\source\repos\UBack\CommonTools\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\source\repos\UBack\CommonTools\obj\Debug\CommonTools.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\UBack\CommonTools\obj\Debug\CommonTools.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\UBack\CommonTools\obj\Debug\CommonTools.csproj.CopyComplete
+C:\Users\Administrator\source\repos\UBack\CommonTools\obj\Debug\CommonTools.dll
+C:\Users\Administrator\source\repos\UBack\CommonTools\obj\Debug\CommonTools.pdb

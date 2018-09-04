@@ -1,0 +1,239 @@
+﻿@{
+    ViewBag.Title = "用户管理";
+    Layout = "~/Areas/WebAdmin/Views/Shared/_LayoutBlank.cshtml";
+}
+<!-- CSS -->
+<style>
+
+    input[type='text'] {
+        width: 212px;
+    }
+</style>
+
+<!-- 工具集 -->
+<div class="my-btn-box btn">
+    <span class="fl">
+        <a class="layui-btn layui-btn-danger radius btn-delect" id="btn-delete-all">批量删除</a>
+        <a class="layui-btn btn-add btn-default" id="btn-add">添加</a>
+    </span>
+    <div class="fr">
+        <span class="layui-form-label">搜索条件：</span>
+        <div class="layui-input-inline">
+            <input type="text" autocomplete="off" placeholder="请输入搜索条件" class="layui-input">
+        </div>
+        <button class="layui-btn mgl-20">查询</button>
+    </div>
+</div>
+
+<!-- 表格 -->
+<div id="dataTable" lay-filter="dataTable"></div>
+
+<!--弹层区域-->
+<form class="layui-form" style="display:none; margin:10px 10px 0 -30px;" id="modules">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="name" lay-verify="required" class="layui-input" />
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">邮箱</label>
+            <div class="layui-input-inline">
+                <input type="text" name="email" lay-verify="required" class="layui-input" />
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">手机</label>
+            <div class="layui-input-inline">
+                <input type="text" name="phone" lay-verify="required" class="layui-input" />
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">单位</label>
+            <div class="layui-input-inline">
+                <input type="text" name="unitid" lay-verify="required" class="layui-input" />
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">部门</label>
+            <div class="layui-input-inline">
+                <input type="text" name="depid" lay-verify="required" class="layui-input" />
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="text" name="pwd" lay-verify="required" class="layui-input" />
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-inline">
+                <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁用" checked />
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">锁定</label>
+            <div class="layui-input-inline">
+                <input type="checkbox" name="locked" lay-skin="switch" lay-text="未锁定|已锁定" checked />
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">所属角色</label>
+            <input type="checkbox" name="role" title="角色1" lay-skin="primary" checked />
+            <input type="checkbox" name="role" title="角色2" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色3" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色4" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色5" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色6" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色7" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色8" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色9" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色10" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色11" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色12" lay-skin="primary" />
+            <input type="checkbox" name="role" title="角色13" lay-skin="primary" />
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">个人介绍</label>
+        <div class="layui-input-block">
+            <textarea name="desc" style="width:95%" placeholder="请输入个人介绍" class="layui-textarea"></textarea>
+        </div>
+    </div>
+</form>
+
+<script src="~/Scripts/layui/layui.js"></script>
+
+<script type="text/html" id="statusTpl">
+    {{#  if(d.status == 1){ }}
+    有效
+    {{#  } else { }}
+    无效
+    {{#  } }}
+</script>
+
+<!-- 表格操作按钮集 -->
+<script type="text/html" id="barOption">
+    <a class="layui-btn layui-btn-sm" lay-event="view">查看</a>
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del">删除</a>
+</script>
+
+<script type="text/javascript">
+    // layui方法
+    layui.use(['table', 'form', 'layer'], function () {
+        // 操作对象
+        var form = layui.form, table = layui.table, layer = layui.layer, $ = layui.jquery;
+
+        // 表格渲染
+        table.render({
+            elem: '#dataTable',
+            id: 'dataCheck',
+            height: 460,
+            url: '/api/user/getlist',
+            limits: [10, 15, 20],
+            limit: 10,
+            page: true,
+            loading: true,
+            cols: [[
+                { type: 'checkbox', checkbox: true, fixed: true, float: 'left' },
+                { type: 'numbers', title: '序号', width: '5%' },
+                { field: 'username', title: '用户名' },
+                { field: 'email', title: '邮箱' },
+                { field: 'phone', title: '联系方式' },
+                { field: 'unitname', title: '单位' },
+                { field: 'depname', title: '部门' },
+                { field: 'locked', title: '锁定' },
+                { field: 'status', title: '状态', templet: '#statusTpl' },
+                { fixed: 'right', title: '操作', align: 'center', toolbar: '#barOption' }
+            ]],
+            done: function (res, curr, count) {
+                console.log(res);
+            }
+        });
+
+        table.on('tool(dataTable)', function (obj) {
+            var type = obj.event;
+            active[type] ? active[type].call(this, obj) : '';
+        });
+
+        var active = {
+            //查看
+            view: function (obj) {
+                var data = obj.data;
+                $("#modules").show();
+                var index = layer.open({
+                    type: 1,
+                    maxmin: true,
+                    title: "查看",
+                    area: ['1000px', '600px'],
+                    shadeClose: true,
+                    btn: "关闭",
+                    yes: function () {
+                        layer.close(index);
+                    },
+                    btnAlign: "c",
+                    content: $('#modules'),
+                    end: function () {
+                        $("#modules").hide();
+                        $('form')[0].reset();
+                    }
+                });
+                //$.getJSON("/api/user/getByID", { id: data.id }, function (d) {
+                //    //console.log(d.data[0].modules);
+
+                //})
+            },
+            //编辑
+            edit: function (obj) {
+                var data = obj.data;
+                $.getJSON("/api/role/getByID", { id: data.id }, function (d) {
+                    var index = layer.open({
+                        type: 1,
+                        maxmin: true,
+                        title: "按钮",
+                        area: ['600px', '400px'],
+                        shadeClose: true,
+                        btn: ["保存", "关闭"],
+                        yes: function () {
+                            console.log("执行保存的方法");
+                            setTimeout(function () {
+                                $('form')[0].reset();
+                                layer.close(index);
+                            }, 3000);
+                        },
+                        btn2: function () {
+                            console.log("第二个按钮的回调函数");
+                        },
+                        btnAlign: "c",
+                        closeBtn: 2,
+                        content: $('#menus'),
+                        cancel: function () {
+                            console.log("cancle");
+                            $('form')[0].reset();
+                        }
+                    });
+                })
+            },
+            //删除
+            del: function (obj) {
+                var data = obj.data;
+                $.getJSON("/api/role/getByID", { id: data.id }, function (d) {
+                    console.log(d.data[0].modules);
+                })
+            }
+        };
+
+    });
+</script>
+
+

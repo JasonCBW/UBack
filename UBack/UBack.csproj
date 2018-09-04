@@ -1,0 +1,680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24FB4B3C-54C4-43E1-A9ED-EA718C9344E1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UBack</RootNamespace>
+    <AssemblyName>UBack</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress>true</Use64BitIISExpress>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\LoginApiController.cs" />
+    <Compile Include="Api\MenuApiController.cs" />
+    <Compile Include="Api\ModuleApiController.cs" />
+    <Compile Include="Api\PermissionApiController.cs" />
+    <Compile Include="Api\RoleApiController.cs" />
+    <Compile Include="Api\SettingApiController.cs" />
+    <Compile Include="Api\UserApiController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Common.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\LoginAuthorizeFilterAttribute.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\WebAdmin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\WebAdmin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\WebAdmin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\WebAdmin\Controllers\PermissionController.cs" />
+    <Compile Include="Areas\WebAdmin\Controllers\RoleController.cs" />
+    <Compile Include="Areas\WebAdmin\Controllers\ModuleController.cs" />
+    <Compile Include="Areas\WebAdmin\Controllers\UserController.cs" />
+    <Compile Include="Areas\WebAdmin\WebAdminAreaRegistration.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WebAdmin\Views\Home\index.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DLL\MySql.Data.dll" />
+    <Content Include="DLL\MySql.Data.Entity.EF6.dll" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\WebAdmin\Views\web.config" />
+    <Content Include="Areas\WebAdmin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\Home\Welcome.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\Shared\_LayoutBlank.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\User\Index.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\Module\Index.cshtml" />
+    <Content Include="Scripts\formSelects\dist\formSelects-v3.js" />
+    <Content Include="Scripts\formSelects\dist\formSelects-v4.css" />
+    <Content Include="Scripts\formSelects\dist\formSelects-v4.js" />
+    <Content Include="Scripts\formSelects\dist\formSelects-v4.min.js" />
+    <Content Include="Scripts\formSelects\example\example01-default.html" />
+    <Content Include="Scripts\formSelects\example\example02-checkbox.html" />
+    <Content Include="Scripts\formSelects\example\example03-icon-default.html" />
+    <Content Include="Scripts\formSelects\example\example04-icon-custom.html" />
+    <Content Include="Scripts\formSelects\example\example05-max.html" />
+    <Content Include="Scripts\formSelects\example\example06-max-tips.html" />
+    <Content Include="Scripts\formSelects\example\example07-on.html" />
+    <Content Include="Scripts\formSelects\example\example_v4.html" />
+    <Content Include="Scripts\formSelects\src\formSelects-v3.js" />
+    <Content Include="Scripts\formSelects\src\formSelects-v4.js" />
+    <Content Include="Scripts\formSelects\UI\citys.js" />
+    <Content Include="Scripts\formSelects\UI\group.png" />
+    <Content Include="Scripts\formSelects\UI\img\logo1.png" />
+    <Content Include="Scripts\formSelects\UI\img\logo2.png" />
+    <Content Include="Scripts\formSelects\UI\jquery-v3.2.1.js" />
+    <Content Include="Scripts\formSelects\UI\js-pinyin.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\css\layui.css" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\css\layui.mobile.css" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\css\modules\code.css" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\font\iconfont.svg" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\form.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\0.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\1.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\10.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\11.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\12.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\13.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\14.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\15.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\16.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\17.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\18.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\19.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\2.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\20.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\21.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\22.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\23.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\24.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\25.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\26.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\27.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\28.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\29.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\3.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\30.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\31.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\32.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\33.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\34.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\35.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\36.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\37.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\38.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\39.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\4.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\40.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\41.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\42.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\43.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\44.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\45.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\46.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\47.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\48.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\49.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\5.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\50.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\51.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\52.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\53.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\54.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\55.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\56.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\57.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\58.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\59.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\6.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\60.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\61.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\62.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\63.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\64.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\65.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\66.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\67.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\68.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\69.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\7.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\70.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\71.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\8.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\images\face\9.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\layui.all.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\layui.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\carousel.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\code.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\element.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\flow.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\form.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\jquery.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\laydate.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\layedit.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\layer.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\laypage.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\laytpl.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\mobile.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\table.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\tree.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\upload.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\lay\modules\util.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\css\layui.css" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\css\layui.mobile.css" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\css\modules\code.css" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\font\iconfont.svg" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\0.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\1.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\10.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\11.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\12.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\13.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\14.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\15.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\16.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\17.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\18.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\19.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\2.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\20.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\21.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\22.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\23.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\24.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\25.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\26.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\27.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\28.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\29.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\3.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\30.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\31.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\32.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\33.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\34.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\35.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\36.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\37.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\38.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\39.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\4.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\40.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\41.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\42.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\43.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\44.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\45.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\46.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\47.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\48.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\49.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\5.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\50.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\51.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\52.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\53.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\54.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\55.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\56.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\57.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\58.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\59.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\6.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\60.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\61.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\62.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\63.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\64.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\65.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\66.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\67.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\68.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\69.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\7.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\70.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\71.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\8.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\images\face\9.gif" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\layui.all.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\layui.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\carousel.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\code.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\element.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\flow.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\form.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\jquery.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\laydate.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\layedit.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\layer.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\laypage.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\laytpl.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\mobile.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\rate.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\table.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\tree.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\upload.js" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\lay\modules\util.js" />
+    <Content Include="Scripts\formSelects\UI\Q.js" />
+    <Content Include="Scripts\formSelects\UI\SyntaxHighlighter-3.0.83\shBrushJScript.js" />
+    <Content Include="Scripts\formSelects\UI\SyntaxHighlighter-3.0.83\shCore.css" />
+    <Content Include="Scripts\formSelects\UI\SyntaxHighlighter-3.0.83\shCore.js" />
+    <Content Include="Scripts\formSelects\UI\SyntaxHighlighter-3.0.83\shThemeEclipse.css" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\layui\css\layui.css" />
+    <Content Include="Scripts\layui\css\layui.mobile.css" />
+    <Content Include="Scripts\layui\css\modules\code.css" />
+    <Content Include="Scripts\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="Scripts\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Scripts\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Scripts\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Scripts\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Scripts\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Scripts\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Scripts\layui\font\iconfont.svg" />
+    <Content Include="Scripts\layui\images\face\0.gif" />
+    <Content Include="Scripts\layui\images\face\1.gif" />
+    <Content Include="Scripts\layui\images\face\10.gif" />
+    <Content Include="Scripts\layui\images\face\11.gif" />
+    <Content Include="Scripts\layui\images\face\12.gif" />
+    <Content Include="Scripts\layui\images\face\13.gif" />
+    <Content Include="Scripts\layui\images\face\14.gif" />
+    <Content Include="Scripts\layui\images\face\15.gif" />
+    <Content Include="Scripts\layui\images\face\16.gif" />
+    <Content Include="Scripts\layui\images\face\17.gif" />
+    <Content Include="Scripts\layui\images\face\18.gif" />
+    <Content Include="Scripts\layui\images\face\19.gif" />
+    <Content Include="Scripts\layui\images\face\2.gif" />
+    <Content Include="Scripts\layui\images\face\20.gif" />
+    <Content Include="Scripts\layui\images\face\21.gif" />
+    <Content Include="Scripts\layui\images\face\22.gif" />
+    <Content Include="Scripts\layui\images\face\23.gif" />
+    <Content Include="Scripts\layui\images\face\24.gif" />
+    <Content Include="Scripts\layui\images\face\25.gif" />
+    <Content Include="Scripts\layui\images\face\26.gif" />
+    <Content Include="Scripts\layui\images\face\27.gif" />
+    <Content Include="Scripts\layui\images\face\28.gif" />
+    <Content Include="Scripts\layui\images\face\29.gif" />
+    <Content Include="Scripts\layui\images\face\3.gif" />
+    <Content Include="Scripts\layui\images\face\30.gif" />
+    <Content Include="Scripts\layui\images\face\31.gif" />
+    <Content Include="Scripts\layui\images\face\32.gif" />
+    <Content Include="Scripts\layui\images\face\33.gif" />
+    <Content Include="Scripts\layui\images\face\34.gif" />
+    <Content Include="Scripts\layui\images\face\35.gif" />
+    <Content Include="Scripts\layui\images\face\36.gif" />
+    <Content Include="Scripts\layui\images\face\37.gif" />
+    <Content Include="Scripts\layui\images\face\38.gif" />
+    <Content Include="Scripts\layui\images\face\39.gif" />
+    <Content Include="Scripts\layui\images\face\4.gif" />
+    <Content Include="Scripts\layui\images\face\40.gif" />
+    <Content Include="Scripts\layui\images\face\41.gif" />
+    <Content Include="Scripts\layui\images\face\42.gif" />
+    <Content Include="Scripts\layui\images\face\43.gif" />
+    <Content Include="Scripts\layui\images\face\44.gif" />
+    <Content Include="Scripts\layui\images\face\45.gif" />
+    <Content Include="Scripts\layui\images\face\46.gif" />
+    <Content Include="Scripts\layui\images\face\47.gif" />
+    <Content Include="Scripts\layui\images\face\48.gif" />
+    <Content Include="Scripts\layui\images\face\49.gif" />
+    <Content Include="Scripts\layui\images\face\5.gif" />
+    <Content Include="Scripts\layui\images\face\50.gif" />
+    <Content Include="Scripts\layui\images\face\51.gif" />
+    <Content Include="Scripts\layui\images\face\52.gif" />
+    <Content Include="Scripts\layui\images\face\53.gif" />
+    <Content Include="Scripts\layui\images\face\54.gif" />
+    <Content Include="Scripts\layui\images\face\55.gif" />
+    <Content Include="Scripts\layui\images\face\56.gif" />
+    <Content Include="Scripts\layui\images\face\57.gif" />
+    <Content Include="Scripts\layui\images\face\58.gif" />
+    <Content Include="Scripts\layui\images\face\59.gif" />
+    <Content Include="Scripts\layui\images\face\6.gif" />
+    <Content Include="Scripts\layui\images\face\60.gif" />
+    <Content Include="Scripts\layui\images\face\61.gif" />
+    <Content Include="Scripts\layui\images\face\62.gif" />
+    <Content Include="Scripts\layui\images\face\63.gif" />
+    <Content Include="Scripts\layui\images\face\64.gif" />
+    <Content Include="Scripts\layui\images\face\65.gif" />
+    <Content Include="Scripts\layui\images\face\66.gif" />
+    <Content Include="Scripts\layui\images\face\67.gif" />
+    <Content Include="Scripts\layui\images\face\68.gif" />
+    <Content Include="Scripts\layui\images\face\69.gif" />
+    <Content Include="Scripts\layui\images\face\7.gif" />
+    <Content Include="Scripts\layui\images\face\70.gif" />
+    <Content Include="Scripts\layui\images\face\71.gif" />
+    <Content Include="Scripts\layui\images\face\8.gif" />
+    <Content Include="Scripts\layui\images\face\9.gif" />
+    <Content Include="Scripts\layui\layui.all.js" />
+    <Content Include="Scripts\layui\layui.js" />
+    <Content Include="Scripts\layui\lay\modules\carousel.js" />
+    <Content Include="Scripts\layui\lay\modules\code.js" />
+    <Content Include="Scripts\layui\lay\modules\element.js" />
+    <Content Include="Scripts\layui\lay\modules\flow.js" />
+    <Content Include="Scripts\layui\lay\modules\form.js" />
+    <Content Include="Scripts\layui\lay\modules\jquery.js" />
+    <Content Include="Scripts\layui\lay\modules\laydate.js" />
+    <Content Include="Scripts\layui\lay\modules\layedit.js" />
+    <Content Include="Scripts\layui\lay\modules\layer.js" />
+    <Content Include="Scripts\layui\lay\modules\laypage.js" />
+    <Content Include="Scripts\layui\lay\modules\laytpl.js" />
+    <Content Include="Scripts\layui\lay\modules\mobile.js" />
+    <Content Include="Scripts\layui\lay\modules\rate.js" />
+    <Content Include="Scripts\layui\lay\modules\table.js" />
+    <Content Include="Scripts\layui\lay\modules\tree.js" />
+    <Content Include="Scripts\layui\lay\modules\upload.js" />
+    <Content Include="Scripts\layui\lay\modules\util.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\static\css\style.css" />
+    <Content Include="Scripts\static\demo\404.html" />
+    <Content Include="Scripts\static\demo\add-edit.html" />
+    <Content Include="Scripts\static\demo\auxiliar.html" />
+    <Content Include="Scripts\static\demo\btn.html" />
+    <Content Include="Scripts\static\demo\children.html" />
+    <Content Include="Scripts\static\demo\data-table.html" />
+    <Content Include="Scripts\static\demo\folding-panel.html" />
+    <Content Include="Scripts\static\demo\form.html" />
+    <Content Include="Scripts\static\demo\login.html" />
+    <Content Include="Scripts\static\demo\login2.html" />
+    <Content Include="Scripts\static\demo\map.html" />
+    <Content Include="Scripts\static\demo\register.html" />
+    <Content Include="Scripts\static\demo\tab-card.html" />
+    <Content Include="Scripts\static\demo\table.html" />
+    <Content Include="Scripts\static\demo\tips.html" />
+    <Content Include="Scripts\static\demo\tree-table.html" />
+    <Content Include="Scripts\static\demo\welcome.html" />
+    <Content Include="Scripts\static\demo\_blank.html" />
+    <Content Include="Scripts\static\image\bg.png" />
+    <Content Include="Scripts\static\image\code.png" />
+    <Content Include="Scripts\static\image\v.png" />
+    <Content Include="Scripts\static\image\wx.png" />
+    <Content Include="Scripts\static\image\zfb.png" />
+    <Content Include="Scripts\static\js\cookie.js" />
+    <Content Include="Scripts\static\js\echarts\echarts.min.js" />
+    <Content Include="Scripts\static\js\enhanceform.js" />
+    <Content Include="Scripts\static\js\formSelects.js" />
+    <Content Include="Scripts\static\js\index.js" />
+    <Content Include="Scripts\static\js\indexhelper.js" />
+    <Content Include="Scripts\static\js\jquery.cookie.js" />
+    <Content Include="Scripts\static\js\layui-xtree.js" />
+    <Content Include="Scripts\static\js\vip_comm.js" />
+    <Content Include="Scripts\static\js\vip_nav.js" />
+    <Content Include="Scripts\static\js\vip_tab.js" />
+    <Content Include="Scripts\static\js\vip_table.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\layui\font\iconfont.eot" />
+    <Content Include="Scripts\layui\font\iconfont.ttf" />
+    <Content Include="Scripts\layui\font\iconfont.woff" />
+    <Content Include="Scripts\static\json\data_table.json" />
+    <Content Include="Scripts\static\json\nav_main.json" />
+    <Content Include="Scripts\static\json\nav_top_left.json" />
+    <Content Include="Scripts\static\json\nav_main2.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonTools\CommonTools.csproj">
+      <Project>{21ed7eeb-3a7d-4408-ba09-5c45b50a7c76}</Project>
+      <Name>CommonTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBLib\DBLib.csproj">
+      <Project>{ed07f114-4b9d-43c2-a7d4-d6b191737e6f}</Project>
+      <Name>DBLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{ccf628a1-b72c-403c-9854-e873ee2e1096}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\WebAdmin\Views\Role\Index.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\Role\Demo.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\Permission\Index.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\Menu\Index.cshtml" />
+    <Content Include="App_Data\20180812143416.nb3" />
+    <Content Include="Areas\WebAdmin\Views\Role\Demo2.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\Login\Login.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\font\iconfont.eot" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\font\iconfont.ttf" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\font\iconfont.woff" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\文档与示例\GitHub.url" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\文档与示例\Git码云.url" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\文档与示例\在线示例.url" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\文档与示例\快速上手.url" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.2.6\更新日志.url" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\font\iconfont.eot" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\font\iconfont.ttf" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\layui\font\iconfont.woff" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\文档与示例\GitHub.url" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\文档与示例\Git码云.url" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\文档与示例\在线示例.url" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\文档与示例\快速上手.url" />
+    <Content Include="Scripts\formSelects\UI\layui-v2.3.0-rc1\更新日志.url" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58004</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58004/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
