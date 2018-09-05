@@ -43,7 +43,7 @@
                     layer.msg("登录成功!");
                     setTimeout(function () {
                         //保存用户信息到cookie
-                        $.cookie('userinfo', JSON.stringify(ret.data[0]));
+                        $.cookie('userinfo', JSON.stringify(ret.data[0]), { path: "/" });
                         window.location.href = "/WebAdmin/Home/Index";
                     }, 2000);
                 }

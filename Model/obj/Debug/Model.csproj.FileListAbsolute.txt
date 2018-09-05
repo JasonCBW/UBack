@@ -7,3 +7,9 @@ C:\Users\Administrator\source\repos\UBack\Model\bin\Debug\Model.pdb
 C:\Users\Administrator\source\repos\UBack\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\UBack\Model\obj\Debug\Model.dll
 C:\Users\Administrator\source\repos\UBack\Model\obj\Debug\Model.pdb
+C:\Users\Administrator\source\repos\UBackEnd\UBack\Model\bin\Debug\Model.dll
+C:\Users\Administrator\source\repos\UBackEnd\UBack\Model\bin\Debug\Model.pdb
+C:\Users\Administrator\source\repos\UBackEnd\UBack\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\UBackEnd\UBack\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\UBackEnd\UBack\Model\obj\Debug\Model.dll
+C:\Users\Administrator\source\repos\UBackEnd\UBack\Model\obj\Debug\Model.pdb

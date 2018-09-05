@@ -18,3 +18,14 @@ C:\Users\Administrator\source\repos\UBack\DBLib\obj\Debug\DBLib.csproj.CoreCompi
 C:\Users\Administrator\source\repos\UBack\DBLib\obj\Debug\DBLib.csproj.CopyComplete
 C:\Users\Administrator\source\repos\UBack\DBLib\obj\Debug\DBLib.dll
 C:\Users\Administrator\source\repos\UBack\DBLib\obj\Debug\DBLib.pdb
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\bin\Debug\DBLib.dll
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\bin\Debug\DBLib.pdb
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\bin\Debug\Model.dll
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\bin\Debug\MySql.Data.dll
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\bin\Debug\Model.pdb
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\obj\Debug\DBLib.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\obj\Debug\DBLib.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\obj\Debug\DBLib.csproj.CopyComplete
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\obj\Debug\DBLib.dll
+C:\Users\Administrator\source\repos\UBackEnd\UBack\DBLib\obj\Debug\DBLib.pdb

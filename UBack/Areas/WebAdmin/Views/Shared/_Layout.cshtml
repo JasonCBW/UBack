@@ -78,7 +78,7 @@
         </table>
     </div>
     <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script src="~/Scripts/static/js/cookie.js"></script>
+    <script src="~/Scripts/static/js/jquery.cookie.js"></script>
     <script src="~/Scripts/static/js/indexhelper.js"></script>
     <script src="~/Scripts/layui/layui.js"></script>
     <script src="~/Scripts/static/js/vip_comm.js"></script>
@@ -87,13 +87,12 @@
             // 操作对象
             var layer = layui.layer
                 , vipNav = layui.vip_nav;
-            debugger;
-            var userinfo = window.top.getUserInfo();
+            var userinfo = getUserInfo();
             // 顶部左侧菜单生成 [请求地址,过滤ID,是否展开,携带参数]
             vipNav.top_left('/Scripts/static/json/nav_top_left.json', 'side-top-left', false);
             // 主体菜单生成 [请求地址,过滤ID,是否展开,携带参数]
             //vipNav.main('/Scripts/static/json/nav_main2.json', 'side-main', true);
-            vipNav.main('/api/permission/getLeftTree', 'side-main', true, userinfo.id);
+            vipNav.main('/api/permission/getLeftTree', 'side-main', true, { userid: userinfo.id });
             // you code ...
         });
     </script>

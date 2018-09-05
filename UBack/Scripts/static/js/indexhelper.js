@@ -9,9 +9,13 @@ function getUserInfo() {
 }
 
 function initUserInfoFromCoookie() {
-    debugger;
     var u = $.cookie('userinfo');
-    var obj = $.parseJSON(u);
-    console.log(obj);
-    userinfo = obj;
+    if (u != null && u != "") {
+        var obj = $.parseJSON(u);
+        console.log(obj);
+        userinfo = obj;
+    }
+    else {
+        window.location.href = "/WebAdmin/Login/login";
+    }
 }
