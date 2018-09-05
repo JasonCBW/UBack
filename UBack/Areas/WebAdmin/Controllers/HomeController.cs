@@ -13,7 +13,6 @@ namespace UBack.Areas.WebAdmin.Controllers
         // GET: WebAdmin/Home
         public ActionResult Index()
         {
-            var a = Session["userid"];
             return View();
         }
 
