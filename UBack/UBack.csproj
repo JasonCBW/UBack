@@ -161,6 +161,7 @@
     <Compile Include="Api\MenuApiController.cs" />
     <Compile Include="Api\ModuleApiController.cs" />
     <Compile Include="Api\PermissionApiController.cs" />
+    <Compile Include="Api\RestApiController.cs" />
     <Compile Include="Api\RoleApiController.cs" />
     <Compile Include="Api\SettingApiController.cs" />
     <Compile Include="Api\UserApiController.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Areas\WebAdmin\Controllers\LoginController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\MenuController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\PermissionController.cs" />
+    <Compile Include="Areas\WebAdmin\Controllers\RestAPIController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\RoleController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\ModuleController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\UserController.cs" />
@@ -622,6 +624,7 @@
     <Content Include="Areas\WebAdmin\Views\Menu\Index.cshtml" />
     <Content Include="App_Data\20180812143416.nb3" />
     <Content Include="Areas\WebAdmin\Views\Login\Login.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\RestAPI\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\font\iconfont.eot" />
     <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\font\iconfont.ttf" />

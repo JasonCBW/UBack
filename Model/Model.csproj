@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="sys_Menu.cs" />
     <Compile Include="sys_Module.cs" />
+    <Compile Include="sys_RestApi.cs" />
     <Compile Include="Tools\JsonPage.cs" />
     <Compile Include="sys_Role.cs" />
     <Compile Include="Tools\MenuTree.cs" />

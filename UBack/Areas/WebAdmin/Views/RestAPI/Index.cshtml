@@ -1,0 +1,219 @@
+﻿@using System.Data;
+@using System.Collections.Generic;
+
+@{
+    ViewBag.Title = "接口管理";
+    Layout = "~/Areas/WebAdmin/Views/Shared/_LayoutBlank.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/Scripts/formSelects/dist/formSelects-v4.css" />
+
+<!-- 工具集 -->
+<div class="my-btn-box">
+    <div class="layui-btn-group">
+        <button class="layui-btn layui-btn-normal toolbox" id="add">
+            <i class="layui-icon">&#xe654;</i>新增API
+        </button>
+    </div>
+</div>
+
+<!-- 表格 -->
+<div id="dataTable" lay-filter="dataTable"></div>
+
+<!--弹层区域-->
+<form class="layui-form" style="display:none; margin:10px 10px 0 -30px;" id="mainForm">
+    <input type="hidden" name="id" />
+    <div class="layui-form-item">
+        <label class="layui-form-label">接口名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="apiname" lay-verify="required" class="layui-input" />
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">访问地址</label>
+        <div class="layui-input-block">
+            <input type="text" name="apiurl" lay-verify="required" class="layui-input" />
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-inline">
+                <input type="radio" name="status" value="1" title="启用" checked>
+                <input type="radio" name="status" value="0" title="禁用">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">接口说明</label>
+        <div class="layui-input-block">
+            <textarea name="remark" style="resize:none" placeholder="请输入接口说明" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" id="save" lay-submit lay-filter="apiform">保存</button>
+            <button id="cancle" class=" layui-btn layui-btn-primary">取消</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/html" id="statusTpl">
+    {{#  if(d.status == 1){ }}
+    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁用" disabled checked />
+    {{#  } else { }}
+    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁用" disabled />
+    {{#  } }}
+
+</script>
+
+<!-- 表格操作按钮集 -->
+<script type="text/html" id="barOption">
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del">删除</a>
+</script>
+
+<script src="~/Scripts/layui/layui.js"></script>
+<script src="~/Scripts/static/js/index.js"></script>
+
+<script type="text/javascript">
+    // layui方法
+    layui.use(['table', 'form', 'layer', 'enhanceform'], function () {
+        // 操作对象
+        var form = layui.form, table = layui.table, layer = layui.layer, enhanceForm = layui.enhanceform;
+        var index = 0;
+        var enhance = new enhanceForm({
+            elem: '#mainForm' //表单选择器
+        });
+
+        // 表格渲染
+        table.render({
+            elem: '#dataTable',
+            id: 'dataCheck',
+            height: 450,
+            even: true,
+            url: '/api/restapi/getlist',
+            limits: [10, 15, 20],
+            limit: 10,
+            page: true,
+            loading: true,
+            cols: [[
+                { type: 'checkbox', checkbox: true, fixed: true, float: 'left' },
+                { type: 'numbers', title: '序号' },
+                { field: 'apiname', title: '接口名称' },
+                { field: 'status', title: '状态', templet: '#statusTpl' },
+                { fixed: 'right', title: '操作', align: 'center', toolbar: '#barOption' }
+            ]]
+        });
+
+        table.on('tool(dataTable)', function (obj) {
+            var type = obj.event;
+            active[type] ? active[type].call(this, obj) : '';
+        });
+
+        form.on('submit(apiform)', function (data) {
+            var formdata = data.field;
+            formdata.modulesname = formSelects.value("modules", "nameStr");
+            $.post("/api/restapi/addOrupdate", formdata, function (ret) {
+                if (ret.flag) {
+                    layer.msg("保存成功!");
+                    setTimeout(function () {
+                        layer.close(index);
+                        $(".layui-laypage-btn").click();
+                    }, 2000)
+                }
+                else {
+                    layer.msg(ret.msg);
+                }
+            }, "json");
+            return false;
+        });
+
+        //按钮自定义事件
+        $(".toolbox").on("click", function () {
+            var type = $(this).attr("id");
+            if (type)
+                active[type] ? active[type].call(this) : '';
+        });
+
+        //取消按钮
+        $("#cancle").click(function () {
+            layer.close(index);
+            return false;
+        })
+
+        var active = {
+            //新增
+            add: function () {
+                $("#save").removeClass("layui-btn-disabled");
+                $("#mainForm").show();
+                $("input[type='hidden']").val("");
+                index = layer.open({
+                    type: 1,
+                    maxmin: false,
+                    title: "新增",
+                    area: ['600px', '450px'],
+                    shadeClose: true,
+                    content: $('#mainForm'),
+                    end: function () {
+                        $("#mainForm").hide();
+                        formSelects.render();
+                        $('form')[0].reset();
+                    }
+                });
+            },
+            //编辑
+            edit: function (obj) {
+                var data = obj.data;
+                $("#save").removeClass("layui-btn-disabled").removeAttr("disabled");
+                $("input[type='hidden']").val(data.id);
+                $.getJSON("/api/restapi/getByID", { id: data.id }, function (d) {
+                    if (d) {
+                        //自动填充值
+                        enhance.filling(d.data);
+                        $("#mainForm").show();
+                        index = layer.open({
+                            type: 1,
+                            maxmin: false,
+                            title: "编辑",
+                            area: ['600px', '450px'],
+                            shadeClose: true,
+                            content: $('#mainForm'),
+                            end: function () {
+                                $("#mainForm").hide();
+                                $('form')[0].reset();
+                                $("input[type='hidden']").val("");
+                            }
+                        });
+                    }
+                })
+            },
+            //删除
+            del: function (obj) {
+                var data = obj.data;
+                var ids = "";
+                if (data) {
+                    ids = data.id;
+                }
+                //获取选中的ID传到后台进行删除
+                if (ids == "")
+                    return;
+
+                layer.confirm('确定删除该条数据吗？', {
+                    btn: ['确定', '取消']
+                }, function () {
+                    $.post("/api/restapi/del", { ids: ids }, function (ret) {
+                        if (ret.flag) {
+                            setTimeout(function () {
+                                $(".layui-laypage-btn").click();
+                            }, 2000)
+                            layer.msg("删除成功!");
+                        }
+                        else {
+                            layer.msg(ret.msg);
+                        }
+                    }, "json");
+                });
+            }
+        };
+    });
+</script>
