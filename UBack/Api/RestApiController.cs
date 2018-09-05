@@ -22,7 +22,7 @@ namespace UBack.Api
         {
             JsonPage ret = new JsonPage();
 
-            string sql = string.Format(@"select me.menuname,me.`code`,me.id,mo.modulename,me.`status` from sys_menu me left join sys_module mo on me.moduleid=mo.id order by me.id desc,mo.id asc");
+            string sql = string.Format(@"select * from sys_restapi order by id asc");
 
             ret = PageHelper.getPage(sql, page, limit);
 

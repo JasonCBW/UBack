@@ -11,7 +11,7 @@
 <div class="my-btn-box">
     <div class="layui-btn-group">
         <button class="layui-btn layui-btn-normal toolbox" id="add">
-            <i class="layui-icon">&#xe654;</i>新增API
+            <i class="layui-icon">&#xe654;</i>新增接口
         </button>
     </div>
 </div>
@@ -72,6 +72,7 @@
     <a class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del">删除</a>
 </script>
 
+<script src="~/Scripts/jquery-1.10.2.js"></script>
 <script src="~/Scripts/layui/layui.js"></script>
 <script src="~/Scripts/static/js/index.js"></script>
 
@@ -112,7 +113,7 @@
 
         form.on('submit(apiform)', function (data) {
             var formdata = data.field;
-            formdata.modulesname = formSelects.value("modules", "nameStr");
+            console.log(formdata);
             $.post("/api/restapi/addOrupdate", formdata, function (ret) {
                 if (ret.flag) {
                     layer.msg("保存成功!");
@@ -156,7 +157,6 @@
                     content: $('#mainForm'),
                     end: function () {
                         $("#mainForm").hide();
-                        formSelects.render();
                         $('form')[0].reset();
                     }
                 });
