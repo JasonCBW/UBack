@@ -524,6 +524,7 @@
     <Content Include="Scripts\layui\layui.js" />
     <Content Include="Scripts\layui\lay\modules\carousel.js" />
     <Content Include="Scripts\layui\lay\modules\code.js" />
+    <Content Include="Scripts\layui\lay\modules\colorpicker.js" />
     <Content Include="Scripts\layui\lay\modules\element.js" />
     <Content Include="Scripts\layui\lay\modules\flow.js" />
     <Content Include="Scripts\layui\lay\modules\form.js" />
@@ -535,6 +536,7 @@
     <Content Include="Scripts\layui\lay\modules\laytpl.js" />
     <Content Include="Scripts\layui\lay\modules\mobile.js" />
     <Content Include="Scripts\layui\lay\modules\rate.js" />
+    <Content Include="Scripts\layui\lay\modules\slider.js" />
     <Content Include="Scripts\layui\lay\modules\table.js" />
     <Content Include="Scripts\layui\lay\modules\tree.js" />
     <Content Include="Scripts\layui\lay\modules\upload.js" />
