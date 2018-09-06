@@ -625,6 +625,7 @@
     <Content Include="App_Data\20180812143416.nb3" />
     <Content Include="Areas\WebAdmin\Views\Login\Login.cshtml" />
     <Content Include="Areas\WebAdmin\Views\RestAPI\Index.cshtml" />
+    <Content Include="App_Data\20180906104801.nb3" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\font\iconfont.eot" />
     <Content Include="Scripts\formSelects\UI\layui-v2.2.6\layui\font\iconfont.ttf" />
